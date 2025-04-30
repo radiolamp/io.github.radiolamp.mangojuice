@@ -7,9 +7,10 @@ sdk: org.gnome.Sdk
 command: mangojuice
 
 finish-args:
-  - --socket=x11
-  - --device=dri
+  - --socket=wayland
   - --share=ipc
+  - --socket=fallback-x11
+  - --device=dri
   - --env=PATH=/app/bin:/usr/bin:/app/utils/bin:/usr/lib/extensions/vulkan/MangoHud/bin
   - --filesystem=home
   - --filesystem=xdg-config/MangoHud:create
@@ -78,4 +79,4 @@ modules:
     sources:
       - type: git
         url: https://github.com/radiolamp/mangojuice.git
-        commit: f0581d4be9e93d37e6c8a800b8a89202f8dbc939
+        commit: 699b9752c8f1a9d9856093e94676341015a8f431
