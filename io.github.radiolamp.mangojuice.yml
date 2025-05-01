@@ -79,4 +79,4 @@ modules:
     sources:
       - type: git
         url: https://github.com/radiolamp/mangojuice.git
-        commit: 699b9752c8f1a9d9856093e94676341015a8f431
+        commit: b063be2026af74852232d19e42e25a519355cc8c
