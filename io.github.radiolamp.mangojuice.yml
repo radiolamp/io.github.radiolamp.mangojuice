@@ -2,7 +2,7 @@
 
 app-id: io.github.radiolamp.mangojuice
 runtime: org.gnome.Platform
-runtime-version: "49"
+runtime-version: '49'
 sdk: org.gnome.Sdk
 command: mangojuice
 
@@ -22,8 +22,8 @@ cleanup:
   - /share/doc
   - /share/man
   - /share/pkgconfig
-  - "*.la"
-  - "*.a"
+  - '*.la'
+  - '*.a'
 modules:
   - name: vulkan-tools
     buildsystem: cmake-ninja
@@ -61,8 +61,8 @@ modules:
       - -Dmangoapp=true
     sources:
       - type: archive
-        url: https://github.com/flightlessmango/MangoHud/releases/download/v0.8.2/MangoHud-v0.8.2-Source.tar.xz
-        sha256: 9fe98da24f790f4489efc1e0c8e3ad0291c80efd882a406797d54dab82f8765b
+        url: https://github.com/flightlessmango/MangoHud/releases/download/v0.8.4/MangoHud-v0.8.4-Source.tar.xz
+        sha256: bbe5a2b976313c53f21dc24b98bbed03226589460a0cce20d923cb2c36c9d8b0
         x-checker-data:
           type: json
           url: https://api.github.com/repos/flightlessmango/MangoHud/releases
@@ -104,7 +104,7 @@ modules:
         sources:
           - type: git
             url: https://github.com/glfw/glfw.git
-            tag: "3.4"
+            tag: '3.4'
             commit: 7b6aead9fb88b3623e3b3725ebb42670cbe4c579
 
       - name: nlohmann-json
