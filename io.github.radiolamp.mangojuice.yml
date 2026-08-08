@@ -16,7 +16,6 @@ finish-args:
   - --filesystem=xdg-config/MangoHud:create
 cleanup:
   - /include
-  - /lib/cmake
   - /lib/pkgconfig
   - /share/cmake
   - /share/doc
@@ -26,6 +25,8 @@ cleanup:
   - '*.a'
 modules:
   - name: vulkan-tools
+    only-arches:
+      - x86_64
     buildsystem: cmake-ninja
     config-opts:
       - -DGLSLANG_INSTALL_DIR=/app
@@ -53,6 +54,8 @@ modules:
                 sha256: 1d679e2edc43cb7ad818b81dea960e374f1d6dd082325eb9b4c6113e76263c02
 
   - name: MangoHud
+    only-arches:
+      - x86_64
     buildsystem: meson
     config-opts:
       - -Dwith_xnvctrl=enabled
@@ -74,6 +77,8 @@ modules:
             .tag_name | sub("^[vV]"; "")
     modules:
       - name: glew
+        only-arches:
+          - x86_64
         no-autogen: true
         make-args: &glew-make-args
           - GLEW_PREFIX=${FLATPAK_DEST}
@@ -89,6 +94,8 @@ modules:
             sha256: d4fc82893cfb00109578d0a1a2337fb8ca335b3ceccf97b97e5cc7f08e4353e1
         modules:
           - name: glu
+            only-arches:
+              - x86_64
             buildsystem: meson
             sources:
               - type: archive
@@ -96,6 +103,8 @@ modules:
                 sha256: bd43fe12f374b1192eb15fe20e45ff456b9bc26ab57f0eee919f96ca0f8a330f
 
       - name: glfw
+        only-arches:
+          - x86_64
         buildsystem: cmake-ninja
         config-opts:
           - -DGLFW_BUILD_EXAMPLES:BOOL=OFF
@@ -108,6 +117,8 @@ modules:
             commit: 7b6aead9fb88b3623e3b3725ebb42670cbe4c579
 
       - name: nlohmann-json
+        only-arches:
+          - x86_64
         buildsystem: cmake-ninja
         config-opts:
           - -DJSON_BuildTests:BOOL=OFF
@@ -118,6 +129,8 @@ modules:
             commit: 55f93686c01528224f448c19128836e7df245f72
 
       - name: libNVCtrl
+        only-arches:
+          - x86_64
         no-autogen: true
         no-make-install: true
         build-commands:
@@ -143,8 +156,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/radiolamp/mangojuice.git
-        commit: b1c5c35d12cbafbb6ec8ebadd97a7f0c5f9257b3
-        tag: 0.9.0
+        commit: 390446f04705526f88a1547994288376e23abb1b
+        tag: 1.0.0
         x-checker-data:
           tag-pattern: ^v([\d.]+)$
           type: git
